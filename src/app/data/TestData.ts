@@ -45,7 +45,7 @@ export class TestData {
             title: 'Найти и выучить учебник по JS',
             priority: TestData.priorities[1],
             completed: false,
-            category: TestData.categories[3],
+            category: TestData.categories[0],
             date: new Date('2023-09-01')
         },
         {

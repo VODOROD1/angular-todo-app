@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import { Category } from 'src/app/model/Category';
-import { Task } from 'src/app/model/Task';
-import { DataHandlerService } from 'src/app/service/data-handler.service';
+import { Component } from '@angular/core'
+import { Category } from 'src/app/model/Category'
+import { DataHandlerService } from 'src/app/service/data-handler.service'
 
 @Component({
   selector: 'app-categories',
@@ -9,13 +8,15 @@ import { DataHandlerService } from 'src/app/service/data-handler.service';
   styleUrls: ['./categories.component.scss'],
 })
 export class CategoriesComponent {
-  public categories: Category[] = [];
-  public tasks: Task[] = [];
+  public categories: Category[] = []
 
   constructor(private dataHandlerService: DataHandlerService) {}
 
   ngOnInit() {
-    this.categories = this.dataHandlerService.getCategories();
-    this.tasks = this.dataHandlerService.getTasks();
+    this.categories = this.dataHandlerService.getCategories()
+  }
+
+  clickCategory(category: Category) {
+    const filteredTasks = this.dataHandlerService.getTasksByCategory(category)
   }
 }

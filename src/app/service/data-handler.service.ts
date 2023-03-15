@@ -17,4 +17,9 @@ export class DataHandlerService {
   getTasks(): Task[] {
     return TestData.tasks;
   }
+
+  getTasksByCategory(category: Category): Task[] {
+    let filteredTasks = TestData.tasks.filter((task) => category?.id === task.category?.id)
+    return filteredTasks
+  }
 }
