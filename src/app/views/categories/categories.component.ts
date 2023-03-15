@@ -13,10 +13,15 @@ export class CategoriesComponent {
   constructor(private dataHandlerService: DataHandlerService) {}
 
   ngOnInit() {
-    this.categories = this.dataHandlerService.getCategories()
+    debugger;
+    this.dataHandlerService.categoriesSubject.subscribe(value => {
+      this.categories = value;
+      debugger;
+    })
   }
 
   clickCategory(category: Category) {
-    const filteredTasks = this.dataHandlerService.getTasksByCategory(category)
+    debugger;
+    const filteredTasks = this.dataHandlerService.fillTasksByCategory(category)
   }
 }
