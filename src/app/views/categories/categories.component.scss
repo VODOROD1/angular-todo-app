@@ -6,4 +6,10 @@
 
 .nav-item {
   cursor: pointer !important;
+  background-image: linear-gradient(195deg, #EC407A 0%, #D81B60 100%);
+}
+
+.selected {
+  background-color: aqua !important;
+  background-image: linear-gradient(195deg, #40beec 0%, #234bdc 100%);
 }

@@ -1,8 +1,13 @@
   <div class="w-auto">
     <ul class="navbar-nav">
-      <li class="nav-item" *ngFor="let category of categories" (click)="clickCategory(category)">
+      <li
+        class="nav-item bg-gradient-primary"
+        *ngFor="let category of categories"
+        (click)="clickCategory(category)"
+        [class.selected] = "category?.id === selectedCategory?.id"
+      >
         <div
-          class="nav-link text-white bg-gradient-primary"
+          class="nav-link text-white"
           href="../pages/dashboard.html"
         >
           <span class="nav-link-text ms-1 ">{{ category.title }}</span>

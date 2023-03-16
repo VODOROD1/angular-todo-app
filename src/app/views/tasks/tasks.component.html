@@ -23,16 +23,20 @@
               </div>
             </td>
             <td class="align-middle text-center text-sm category">
-              <span class="text-xs font-weight-bold">{{task?.category?.title}}</span>
+              <span class="text-xs font-weight-bold">{{task?.category?.title ? task?.category?.title : 'Нет категории!'}}</span>
             </td>
             <td class="align-middle text-center text-sm priority">
               <span class="text-xs font-weight-bold">{{task?.priority?.title}}</span>
             </td>
             <td class="align-middle text-center text-sm completed">
-              <span class="text-xs font-weight-bold">{{task?.completed}}</span>
+              <div class="form-check form-switch ps-0 ms-auto my-auto">
+                <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed" [checked]="task?.completed">
+              </div>
+              <!-- <input class="form-check-input mt-1 ms-auto" type="checkbox" [checked]="task?.completed"/> -->
+              <!-- <span class="text-xs font-weight-bold">{{task?.completed ? task?.completed : 'Нет статуса!'}}</span> -->
             </td>
             <td class="align-middle text-center text-sm completed">
-              <span class="text-xs font-weight-bold">{{task?.date}}</span>
+              <span class="text-xs font-weight-bold">{{task?.date ? (task?.date | date: "MM dd yyyy") : 'Нет даты!'}}</span>
             </td>
             <!-- <td class="align-middle">
               <div class="progress-wrapper w-75 mx-auto">

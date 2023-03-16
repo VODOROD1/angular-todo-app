@@ -100,7 +100,7 @@ export class TestData {
             id: 10,
             title: 'Положить 100 000 р в банк на депозит',
             priority: TestData.priorities[2],
-            completed: false,
+            completed: true,
             category: TestData.categories[9],
             date: new Date('2023-09-01')
         }

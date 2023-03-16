@@ -7,9 +7,12 @@ import { DataHandlerService } from 'src/app/service/data-handler.service'
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.scss'],
 })
+
 export class CategoriesComponent {
   public categories: Category[] = []
-
+  
+  public selectedCategory: Category;
+// @ts-ignore
   constructor(private dataHandlerService: DataHandlerService) {}
 
   ngOnInit() {
@@ -23,5 +26,6 @@ export class CategoriesComponent {
   clickCategory(category: Category) {
     debugger;
     const filteredTasks = this.dataHandlerService.fillTasksByCategory(category)
+    this.selectedCategory = category;
   }
 }
