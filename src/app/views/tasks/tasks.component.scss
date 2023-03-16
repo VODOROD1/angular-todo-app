@@ -2,3 +2,14 @@
     display: inline-block !important;
     vertical-align: top;
 }
+
+.linethrough {
+    td {
+        text-decoration: line-through;
+        color: lightblue;
+    }
+}
+
+.novalue {
+    color: lightgray;
+}

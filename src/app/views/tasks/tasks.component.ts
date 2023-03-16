@@ -10,6 +10,7 @@ import { DataHandlerService } from 'src/app/service/data-handler.service';
 
 export class TasksComponent {
   public tasks: Task[] = [];
+
   constructor(private dataHandlerService: DataHandlerService) {
   }
 
@@ -19,5 +20,9 @@ export class TasksComponent {
       this.tasks = value;
       debugger;
     })
+  }
+
+  toggleTaskCompleted(task: Task): void {
+    task.completed = !task.completed
   }
 }
