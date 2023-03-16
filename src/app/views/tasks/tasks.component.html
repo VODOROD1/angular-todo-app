@@ -2,66 +2,39 @@
   <div class="card-body px-0 pb-2">
     <div class="table-responsive">
       <table class="table align-items-center mb-0">
+        <thead>
+          <th>ID</th>
+          <th>Название</th>
+          <th>Категория</th>
+          <th>Приоритет</th>
+          <th>Статус</th>
+          <th>Дата</th>
+        </thead>
         <tbody>
-          <tr *ngFor="let task of tasks">
+          <tr *ngFor="let task of tasks id">
             <td>
               <div class="d-flex px-2 py-1">
-                <div>
-                  <img
-                    src="../assets/img/small-logos/logo-xd.svg"
-                    class="avatar avatar-sm me-3"
-                    alt="xd"
-                  />
-                </div>
-                <div class="d-flex flex-column justify-content-center">
-                  <h6 class="mb-0 text-sm">{{task.title}}</h6>
-                </div>
+                {{task.id}}
               </div>
             </td>
             <td>
-              <div class="avatar-group mt-2">
-                <a
-                  href="javascript:;"
-                  class="avatar avatar-xs rounded-circle"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="bottom"
-                  title="Ryan Tompson"
-                >
-                  <img src="../assets/img/team-1.jpg" alt="team1" />
-                </a>
-                <a
-                  href="javascript:;"
-                  class="avatar avatar-xs rounded-circle"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="bottom"
-                  title="Romina Hadid"
-                >
-                  <img src="../assets/img/team-2.jpg" alt="team2" />
-                </a>
-                <a
-                  href="javascript:;"
-                  class="avatar avatar-xs rounded-circle"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="bottom"
-                  title="Alexander Smith"
-                >
-                  <img src="../assets/img/team-3.jpg" alt="team3" />
-                </a>
-                <a
-                  href="javascript:;"
-                  class="avatar avatar-xs rounded-circle"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="bottom"
-                  title="Jessica Doe"
-                >
-                  <img src="../assets/img/team-4.jpg" alt="team4" />
-                </a>
+              <div class="d-flex flex-column justify-content-center title">
+                <h6 class="mb-0 text-sm">{{task.title}}</h6>
               </div>
             </td>
-            <td class="align-middle text-center text-sm">
+            <td class="align-middle text-center text-sm category">
+              <span class="text-xs font-weight-bold">{{task?.category?.title}}</span>
+            </td>
+            <td class="align-middle text-center text-sm priority">
               <span class="text-xs font-weight-bold">{{task?.priority?.title}}</span>
             </td>
-            <td class="align-middle">
+            <td class="align-middle text-center text-sm completed">
+              <span class="text-xs font-weight-bold">{{task?.completed}}</span>
+            </td>
+            <td class="align-middle text-center text-sm completed">
+              <span class="text-xs font-weight-bold">{{task?.date}}</span>
+            </td>
+            <!-- <td class="align-middle">
               <div class="progress-wrapper w-75 mx-auto">
                 <div class="progress-info">
                   <div class="progress-percentage">
@@ -78,7 +51,7 @@
                   ></div>
                 </div>
               </div>
-            </td>
+            </td> -->
           </tr>
         </tbody>
       </table>
