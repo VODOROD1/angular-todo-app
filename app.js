@@ -1,34 +1,17 @@
-/*
- * Получение GET и POST запросов
- */
-const http = require("http")
-const url = require("url")
-// const {parseQuerystring} = require("querystring")
-const querystring = require('node:querystring');
+const fs = require("fs")
+const express = require("express")
+const app = express()
 
-http
-  .createServer((request, response) => {
-    if (request.method === "GET") {
-      console.log(request.method)
-      const urlRequest = url.parse(request.url, true)
-      console.log("urlRequest", urlRequest)
-      console.log(urlRequest.query.test)
-      if (urlRequest.query.test % 2 === 0) {
-        response.end("AAAAA")
-      } else {
-        response.end("BBBBB")
-      }
-    } else if (request.method === "POST") {
-        let body = ''
-        request.on('data', chunk => {
-            body += chunk.toString()
-        })
-        request.on('end', () => {
-            console.log('body',body)
-            let params = querystring.parse(body)
-            console.log("params",params)
-            response.end('ok')
-        })
-    }
+app.get("/", function(request, response){
+  console.log('!!!response!!!',response)
+  response.status(200).json({
+    message: 'Working'
   })
-  .listen(3000)
+  // отправляем ответ
+  // response.send("<h2>Привет Express!</h2>") 
+})
+
+app.listen(3000, () => {
+  console.log('Server has been started!')
+})
+

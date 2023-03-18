@@ -4,7 +4,7 @@
         class="nav-item bg-gradient-primary"
         *ngFor="let category of categories"
         (click)="clickCategory(category)"
-        [class.selected] = "category?.id === selectedCategory?.id"
+        [class.selected] = "category.id === selectedCategory.id"
       >
         <div
           class="nav-link text-white"
